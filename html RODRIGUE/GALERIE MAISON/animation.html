@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>animation</title>
+	<style type="text/css">
+		.div1{
+			width:576px;
+			height: 432px;
+			margin: 50px auto;
+			box-shadow: 0px 15px 10px -5px #777;
+			background: #EDEDED;
+			background-size: contain;
+			animation: fondu 5s ease-in-out infinite both;;
+		}
+		.div2{
+			width: 100%;
+			height: 0px;
+			margin-top: 75%;
+			box-shadow: 0px 0px 10px #777;
+			background: #EDEDED;
+			background-size: contain;
+			animation: fondu 5s ease-in-out infinite both;
+		}
+		.conteneur{
+			max-width: 576px;
+			margin: 50px auto;
+			background:;
+			height: ;
+		}
+		.div1:hover, .div2:hover{
+			animation-play-state: ;
+			background: ;
+		}
+
+		@keyframes fondu{
+			
+			0%{
+				background-image: url("01.png");
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			15%{
+				background-image: url("MODELE/02.png");
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			30%{
+				background-image: url("MODELE/03.png");
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			45%{
+				background-image: url("MODELE/04.png");
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			60%{
+				background-image: url("MODELE/05.png");
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			75%{
+				background-image: url("MODELE/06.png");
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			85%{
+				background-image: url("MODELE/07.png");
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			100%{
+				background-image: url("MODELE/01.png");
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+		}
+
+		/*===================================================*/
+		.d1{
+			width: 3840px;
+			height: 720px;
+			background-color: #EDEDED;
+			background-image: url("MODELE/01.png");
+			animation: defilement 12s linear infinite;
+		}
+		.conteneur1{
+			overflow: hidden;
+			max-width: 960px;
+			margin: 50px auto;
+			box-shadow: 0px 15px 10px -5px #777;
+		}
+		.d2{
+			width: 400%;
+			height: 0;
+			padding-top: 75%;
+			background-color: #ededed;
+			background-image: url("MODELE/01.png");
+			background-size: contain;
+			animation: defilement2 12s linear infinite;
+		}
+		.conteneur2{
+			max-width: 960px;
+			overflow: hidden;
+			margin: 50px auto;
+			box-shadow: 0px 0px 10px #777;
+		}
+		@keyframes defilement2{
+			0%{
+				transform: translate(0, 0);
+			}
+			100%{
+				transform: translate(-75%, 0);
+			}
+		}
+		@keyframes defilement{
+			0%{
+				transform: translate(0, 0);
+			}
+			100%{
+				transform: translate(-2880px, 0);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="conteneur">
+		<div class="div2"></div>
+	</div>
+
+	<div class="conteneur1">
+		<div class="d1"></div>
+	</div>
+	<div class="conteneur2">
+		<div class="d2"></div>
+	</div>
+</body>
+</html>

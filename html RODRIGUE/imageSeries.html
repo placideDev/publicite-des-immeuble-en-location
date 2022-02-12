@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>imageSeries</title>
+	<link rel="stylesheet" type="text/css" href="imageSeries.css">
+</head>
+<body>
+	<figure class="snip1589">
+		<img src="GALERIE MAISON/PLAN/1.jpg" alt="sample70">
+		<figcaption>
+			<h3>rodrigue <span>Bukavu</span></h3>
+		</figcaption>
+		<a href="#"></a>
+	</figure>
+	<figure class="snip1589 hover">
+		<img src="GALERIE MAISON/PLAN/2.jpg" alt="sample106">
+		<h3>placide <span>muhemedi</span></h3>
+		<a href=""></a>
+	</figure>
+	<figure class="snip1589">
+		<img src="GALERIE MAISON/PLAN/4.jpg" alt="sample109">
+		<h3>jeannette<span>masimago</span></h3>
+		<a href=""></a>
+	</figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript">
+
+		var snippet= [].slice.call(document.querySelectorAll('.hover'));
+		if (snippet.lengh) {
+			snippet.forEarch(function (snippet){
+				snippet.addEventListener('mouseout',function(event){
+					if(event.target.parentNode.tagName=== 'figure'){
+						event.target.parentNode.classList.remove('hover')
+					}else{
+						event.target.parentNode.classList.remove('hover')
+					}
+				});
+			});
+		}
+
+
+
+
+
+
+
+		// delay=100; //delai entre photos
+		// imgNumber=0; //indicateur de l'image courante
+		// totalImgNumber=7; //nombre d'image
+		// anim= new Array(); //tableau d'images 
+
+		// for (var i = 0; i < totalImgNumber; i++){
+		// 	anim[i]=new Image(239, 390);
+		// 	anim[i].src="GALERIE MAISON/PLAN/1" +(i + 1) +".jpg";
+		// 	}
+
+		// function Switch() {
+		// 	document.getElementById('GALERIE').src=anim[imgNumber].src;
+		// 	imgNumber++;
+		// 	if (imgNumber>=totalImgNumber)imgNumber=0;
+		// }
+
+		// function animate() {
+		// 	Switch();
+		// 	setTimeout("animate()", delay);
+		// }
+
+		// function fast() {
+		// 	delay-=10;
+		// 	if (delay < 0) {
+		// 		delay=0;
+		// 	}
+		// }
+		// function slow() {
+		// 	delay+=10;
+		// 	if (delay > 4000) {
+		// 		delay=4000;
+		// 	}
+		// }
+
+		// onLoad="animate()";
+	</script>
+		
+</body>
+</html>

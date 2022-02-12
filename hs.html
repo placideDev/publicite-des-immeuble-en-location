@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>menueeeeeeeeee</title>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			font-family: 'poppins', sans-serif;
+		}
+		.container{
+			width: 80%;
+			height: 100vh;
+			display:block;
+			justify-content: center;
+			align-items: center;
+			background: #fff173;
+			margin:auto;
+			transition: 0.5s;
+			padding: 20px;
+		}/*
+		.conatiner .con_box{
+			width: 80%;
+			height: 100%;
+			position: relative;
+
+			margin: auto;
+			display: block;
+		}
+		.conatiner.active{
+			filter: blur(20px);
+		}
+		h2{
+			font-weight: 800;
+			margin-bottom: 10px;
+			color: #333;
+		}
+		.conatiner .con_box img{
+			max-width: 100%;
+			display: block;
+			filter: blur(20px);
+		}
+		a{
+			position: relative;
+			position: 5px 20px;
+			display: inline-block;
+			margin-top: 20px;
+			text-decoration: none;
+			color: #fff;
+			background: #111;
+		}*/
+		nav ul{
+			width: 100%;
+			height: 60vh;
+			background: linear-gradient(#fff, #FAF);
+			display: flex;
+			padding: 10px 5px;
+		}
+		nav ul li{
+			list-style: none;
+			width: 100%;
+			height: 5vh;
+			background: black;
+			color: #fff;
+			margin-left: 5px;
+		}
+		@media screen and(max-width: 700px){
+			nav ul{
+			width: 100%;
+			height: 60vh;
+			background: linear-gradient(#fff, #FAF);
+			display: block;
+			padding: 10px 5px;
+		}
+		}
+	</style>
+</head>
+<body>
+	<div id="" class="container">
+		<nav id="nav">
+			<ul>
+				<li>acceuil</li>
+				<li>acceuil</li>
+				<li>acceuil</li>
+				<li>acceuil</li>
+				<li>acceuil</li>
+				<li>acceuil</li>
+				<li>acceuil</li>
+				<li>acceuil</li>
+				<li>acceuil</li>
+				<li>acceuil</li>
+				<li>acceuil</li>
+				<li>acceuil</li>
+			</ul>
+		</nav>
+		<button onclick="changeMenu()">retour</button>
+		<button onclick="changeMen()">page</button>
+	</div>
+	<!-- <div class="conatiner">
+		<div id="con_box" class="con_box">
+			<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
+			<p>
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<img src="../../../image/aigle.jpg">
+			<a href="#" onclick="toggle()">entre</a>
+		</div>
+	</div> -->
+	<script type="text/javascript">
+
+		function changeMenu() {
+			let left=document.getElementById('nav');
+			left.style.visibility="hidenn";
+			left.style.opacity="0";
+
+		}
+		function changeMen(){
+			let left=document.getElementById('nav');
+			left.style.visibility="hidenn";
+			left.style.opacity="2";
+			}
+		
+		// function toggle() {
+		// 	let blur=document.getElementById('con_box');
+		// 	blur.classList.toggle('active');
+		// }
+	</script>
+</body>
+</html>

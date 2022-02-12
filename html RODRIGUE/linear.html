@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		body{
+			height: 200vh;
+			background: radial-gradient(#deaeaa, #999999);
+		}
+		div{
+			width: 500px;
+			margin: auto;
+			height: 80vh;
+			margin-top: 30px;
+			box-shadow: 0 0 20px 20px #f0fb00;
+			background: linear-gradient(#333, #FFF);
+
+		}
+		.div{
+			width: 300px;
+			height: 300px;border-radius: 50%;
+			background: linear-gradient(#bcaedb, #bcedde);
+			position: relative;
+			left: 40px;
+			top: 40px;
+			animation: eee 2s linear infinite;
+		}
+
+		.div:before{
+			position: absolute;
+			right: -40px;
+			top: 40px;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			background: linear-gradient(#ddeeaa, #aaeeee);
+		}
+		.div:after{
+			position: absolute;
+			right: 40px;
+			top: -40px;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			background: linear-gradient(#000, #aaeeee);
+		}
+		@keyframes eee{
+			to{
+				transform: rotate(0deg);
+			}
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div class="div"></div>
+	</div>
+
+</body>
+</html>

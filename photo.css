@@ -1,0 +1,38 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'poppins', sans-serif;
+}
+.container{
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 30px 10px;
+}
+.gallery{
+	display: flex;
+	flex-wrap: wrap;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 30px;
+}
+.gallery a{
+	width: 30%;
+}
+.gallery img{
+	width: 100%;
+}
+
+
+
+
+@media(max-width: 768px){
+	.gallery{
+		display: block;
+	}
+	.gallery a{
+		width: 80%;
+	}
+}

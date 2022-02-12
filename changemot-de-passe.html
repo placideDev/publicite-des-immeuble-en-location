@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTRE LE MOT DE PASSE</title>
+</head>
+<body>
+    <button onclick="motpasse()">click</button>
+</body>
+</html>
+
+<Script>
+    function motpasse() {
+    let ancien = prompt("entre l'ancien mot de passe");
+    let newpasseword = prompt("entre nouveau mot de passe")
+        if (ancien==newpasseword) {
+            alert("vous avait rien change")
+        }
+        else{
+           alert ("bravo vous avez bien change")
+        }
+
+        }
+
+        function addition() {
+            let c = confirm("vous etes sur de commence")
+                if (c) {
+                    let n1 = prompt("entre n1")
+                    let n2 = prompt ("entre n2")
+                    let t= n1 + n2;
+                    let d = confirm("bravo " + t)
+               if (d) {
+                   addition()
+               }
+
+
+
+               else{
+                   alert("desole")
+               }
+            }
+              
+                else {
+                    alert("vous avez annuler")
+                }
+       }
+addition()
+</Script>

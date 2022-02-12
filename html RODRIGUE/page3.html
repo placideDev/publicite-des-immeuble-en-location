@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<link rel="stylesheet" type="text/css" href="../css/style2.css">
+</head>
+<body>
+		<form id="inscription" class="login-box">
+		<fieldset>
+				<h2>Veuillez renseigner ces champs suivants*</h2>
+
+				<div class="user-box">
+					<label for="name">NOM*</label>
+					<br>
+						<input type="text" id="pseudo">
+	
+				<br>
+				<label for="prenom">PRENOM*</label>
+				<br>
+					<input type="text" id="prenom">
+				<br>
+				<label for="post-nom">NOM DE FAMILLE*</label>
+				<br>
+					<input type="`text" id="post_nom">
+				
+				<br>
+				<label>Numero de telephone*</label>
+				<br>
+					<input type="tel" id="mdp" name="">
+			<br>
+			<label>Adress e-mail*</label>
+			<br>
+				<input type="email" name="" id="email">
+		
+			<br>
+		</div>
+			<div class="sexe">
+				<label for="genre">SEXE*</label>
+					<br>
+					<input type="radio" name="genre"><label>homme</label>
+					<br>
+					<input type="radio" name="genre"><label>femme</label>
+			</div>
+			<div class="date">
+								<label for="date">date de naissance:</label>
+				<br>
+					<input type="date">
+				<br>
+				<label>jour d'enreg:</label>
+				<br>
+					<input type="time">
+				
+				<br>
+					<input type="week" name="">
+			
+			</div>
+
+				<div class="btn">
+					<input type="reset" value="Recommencer">
+					<input type="submit" value="Envoyer">
+			 	</div>
+		</fieldset>
+		<p style="color: red;" id="erreur"></p>
+	</form>
+
+	
+
+
+	<script>
+		document.getElementById('inscription').addEventListener("submit", 
+			function(e) {
+				
+			var erreur;
+			var inputs= document.getElementsByTagName('input');
+
+			for (var i = 0; i < inputs.length; i++) {
+				if (!inputs[i].value) {
+					erreur=' Veuillez renseigner tous les champs';
+				}
+			}
+
+
+
+			if (erreur) {
+				e.preventDefault();
+				document.getElementById('erreur').innerHTML=erreur;
+				return false;
+			}else{
+				alert('formulaire envoye !');
+			}
+
+			// var pseudo= document.getElementById('pseudo');
+			// var prenom= document.getElementById('prenom');
+			// var email= document.getElementById('email');
+			// var post_nom= document.getElementById('post_nom');
+			// var mdp= document.getElementById('mdp');
+			
+			// if (!pseudo.value) {
+			// 	erreur='Veuillez renseigner un NOM'
+			// }
+			// if (!prenom.value) {
+			// 	erreur='Veuillez renseigner un PRENOM'
+			// }
+			// if (!email.value) {
+			// 	erreur='Veuillez renseigner un email'
+			// }
+			// if (!post_nom.value) {
+			// 	erreur='Veuillez renseigner un NOM DE FAMILLE'
+			// }
+			// if (!mdp.value) {
+			// 	erreur='Veuillez renseigner votre Numero de telephone'
+			// }
+			
+			
+		})
+	</script>
+</body>
+</html>

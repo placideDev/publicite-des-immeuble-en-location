@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<link rel="stylesheet" type="text/css" href="">
+	<style type="text/css">
+		body{
+			background:url(../img/back.jpeg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			display: flex;
+			height: 100vh;
+			justify-content: center;
+			align-items: center;
+			font-family: sans-serif;
+		}
+
+		.login-box{
+			width: 400px;
+			padding: 50px;
+			background:#f3f2f7;
+			backdrop-filter:blur(15px) saturate(200%);
+			border-radius: 10px;
+		}
+		.login-box h2{
+			text-align: center;
+			color: red;
+			margin-top: 100px;
+			font-family: serif;
+			font-size: 35px;
+			letter-spacing: 3px;
+			font-weight: normal;
+		}
+		.user-box{
+			position: relative;
+		}
+		.user-box input{
+			width: 100%;
+			padding: 10px 0;
+			font-size: 16px;
+			color: #000;
+			margin-bottom: 30px;
+			border:none;
+			border-bottom: 1px solid red;
+			outline: none;
+			background: white;
+			transition: 0.5s;
+		}
+		input:focus, input:valid{
+			top: -20px;
+			left: 0;
+			color: white;
+			font-size: 12px;
+
+		}
+		input:hover{
+			border:1px solid red;
+			box-shadow: 0 0 2px 3px red ;
+			border-radius: 5px;
+		}
+
+		.btn{
+			width: 100%;s
+			padding: 20px 40px;
+			text-decoration: none;
+			font-size: 16px;
+			display: block;
+			text-align: center;
+			transition: 0.5s;
+			background: red;
+			color: white;
+			font-weight: bold;
+			box-shadow: 0 0 6px 8px ;
+			cursor: pointer;
+			border:none;
+			margin-top: 50px;
+		}
+		.bt{
+			width: 100%;s
+			padding: 20px 40px;
+			text-decoration: none;
+			font-size: 16px;
+			display: block;
+			text-align: center;
+			transition: 0.5s;
+			background: red;
+			color: white;
+			font-weight: bold;
+			box-shadow: 0 0 20px 30px white;
+			cursor: pointer;
+			border:none;
+			margin-top: 50px;
+		}
+
+
+		.btn:hover, .bt:hover{
+			box-shadow: 0 0 0 0 red;
+			}
+		#a{
+			color: red;
+			text-decoration: none; 
+			margin-bottom: -30px;
+		}
+		.login-box a{
+			color: red;
+			text-decoration:none;
+		}
+		fieldset{
+			border: none;
+		}
+	</style>
+</head>
+<body>
+	<header>
+			
+	</header>
+	<form id="inscription" method="post" action="traitement.PHP" class="login-box">
+		<fieldset>
+			<h2>Veuillez vous authentifier*</h2>
+		<div class="user-box">
+			<input type="text" placeholder="NOM*" required="required" maxlength="20" id="prenom">
+			<br>
+			<span id="nom_manquant"></span>
+
+			<input id="post" type="text" placeholder="post-nom & prenom*" required="required">
+			<br>
+
+		</div>
+			<a href="">Place client & patient(e)</a>
+			<br>
+			<input type="submit" class="btn" id="bouton_envoi" value="Parcourir">
+			<br>
+			<br>
+
+			<a href="" id="a">Place Agents</a> 
+			<input type="submit" class="bt" id="bouton_envoi" value="S'enregistrer">
+			<p style="color: red; font-size: 40px" id="erreur"></p>
+		</fieldset>
+		<br>
+			<footer>
+		<p>&copy; by <a href="@mail.com">Rodrigueiragi1@gmail.com</a></p>
+		
+	</footer>
+	</form>
+
+
+
+
+
+<script>
+	document.getElementById('inscription').addEventListener('submit', 
+		function (e) {
+
+			var erreur;
+			var inputs= document.getElementsByTagName('input');
+
+
+			for (var i = 0; i < inputs.length; i++) {
+				if (!inputs[i].value) {
+					erreur=' Veuillez renseigner tous les champs';
+				}
+			}
+
+			if (erreur) {
+				e.preventDefault();
+				document.getElementById('erreur').innerHTML=erreur;
+				return false;
+			}else{
+				alert('formulaire envoye !');
+			}
+		
+	})
+
+	// var validation= document.getElementById('bouton_envoi');
+	// var prenom= document.getElementById('prenom');
+	// var prenom_m= document.getElementById('prenom_manquant');
+	// var prenom_v= /^[a-zA-Zéêèî*£][a-zéêèçàîû^]+({-'\&}[a-zA-Zéêèî*£][a-zéêèçàîû^]+)?/;
+	// validation.addEventListener('click', f_valid);
+
+
+	// function f_valid(e) {
+	// 	if (prenom.validity.valueMissing) {
+	// 		e.preventDefault();
+	// 		prenom_m.textCotent='prenom manquant';
+	// 		prenom_m.style.color='red';
+
+	// 	}
+	// 	else if (prenom_v.test(prenom.value)==false) {
+	// 		event.preventDefault();
+	// 		prenom_m.textCotent='Format incorrect';
+	// 		prenom_m.style.color='Orange';
+
+	// 	}
+	// 	else{
+
+	// 	}
+	// }
+</script>
+<body>
+
+</body>
+</html>

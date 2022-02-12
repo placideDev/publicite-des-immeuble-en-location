@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>
+        How to zoom-in and zoom-out
+        image using JavaScript ?
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="lightbox.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+   <link rel="stylesheet" type="text/css" href="css/all.min.css">
+   <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+      
+    <!-- <script src=
+                "https://code.jquery.com/jquery-1.12.4.min.js">
+    </script> -->
+</head>
+  <style>
+
+/*le css pour le menu*/
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-image: url(laptop.jpg);
+        background-size: cover;
+        background-position: center;
+        
+        font-family: sans-serif;
+    }
+    .menu-bars{
+        background-color: skyblue;
+        text-align: center;
+
+    }
+
+    .menu-bars ul{
+        display:inline-flex;
+        list-style: none;
+        color: #f1f1f1;
+    }
+    .menu-bars ul li{
+        width: 120px;
+        margin: 10px;
+        padding: 15px;
+    }
+    .menu-bars ul li a{
+        text-decoration: none;
+        color: #fff;
+
+    }
+    .active, .menu-bars ul li:hover{
+        background-color: #2bab0d;
+        border-radius: 3px;
+    }
+    .menu-bars .fas{
+        margin-left: 8px;
+    }
+    .sub-menu-1{
+        display: none;
+
+    }
+    .menu-bars ul li:hover  .sub-menu-1{
+        display: block;
+        position: absolute;
+        background: skyblue;
+        margin-top: 15px;
+        margin-left: -15px;
+
+    }
+    .menu-bars ul li:hover  .sub-menu-1 ul{
+        display: block;
+        margin: 10px;
+    }
+    .menu-bars ul li:hover  .sub-menu-1 ul li{
+        width: 150px;
+        padding: 10px;
+        border-bottom: 1px dotted #fff;
+        border-radius: 0;
+        background-color: transparent;
+        text-align:left;
+
+    }
+    .menu-bars ul li:hover  .sub-menu-1 ul li:last-child{
+        border-bottom: none;
+    }
+    .menu-bars ul li:hover  .sub-menu-1 ul li a:hover{
+        color: #b2ff00;
+    }
+    .fa-chevron-right{
+        float: right;
+    }
+    .sub-menu-2{
+        display: none;
+    }
+    .hover-me:hover .sub-menu-2{
+        position: absolute;
+        display: block;
+        margin-top: -40px;
+        margin-left: 140px;
+        background-color: skyblue;
+    }
+        *{
+            margin: 0;
+            padding: 0;
+            box-shadow: border-box;
+            font-family: "poppons", sans-serif;
+        }
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 4%;
+
+        }
+    /*    .lb-cancel {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  background: url(images/loading.gif) no-repeat;
+}*/
+        .gallery{
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            grid-gap: 30px;
+            
+
+        }
+        .gallery img{
+            width: 100%;
+             
+        }
+        .gallery img:hover{
+             box-shadow: 0 0 15px rgba(0 0 0 0.5);
+        }
+
+        .div-flooteur{
+            margin: auto;
+            /*margin-top: 50 auto;*/
+            width:20%;
+            height: 20vh;
+            box-shadow: 0 0 15px rgba(0 0 0.5);
+            background-color: white;
+            background-size: contain;
+            animation: pacifique 10s ease-in-out infinite both;
+
+        }
+        .div-floteur2{
+            width: 50%;
+            height: 0px;
+            margin-top: 75%;
+            box-shadow: 0 0 15px rgba(0 0 1);
+            background-color: #edeadf;
+            background-size: contain;
+            animation: pacifique 10s ease-in-out infinite both;
+            overflow: scroll;
+        }
+        .containeur{
+            max-width: 50px;
+            margin: 50px auto;
+        }
+
+        @keyframe  pacifique{
+            0%{
+                transform: translate(0px);
+                background-image: url("laptop.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            15%{
+                transform: translateY(120px);
+                background-image: url("plan/p1.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            25%{
+                transform: translateX(480px);
+                background-image: url("plan/p14.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            50%{
+                transform: translateY(960px);
+                background-image: url("plan/p8.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            75%{
+                transform: translateX(300px);
+                background-image: url("normal/i1.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            100%{
+                transform: translateY(0px);
+                background-image: url("laptop.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+
+        /*fini le style gallery flote*/
+  </style>
+<body>
+
+<div class="menu-bars">
+    <ul>
+        <li class="active"><i class="fas fa-home"></i><a href="#">homme</a></li>
+        
+        <li><a href="#"><i class="fas fa-user"></i>About us</a>
+            <div class="sub-menu-1">
+                <ul>
+                    <li> <a href= "#">mession</a></li>
+                     <li> <a href= "#">Vision</a></li>
+                      <li> <a href= "#">Team </a>
+                      </li>
+                </ul>
+            </div>
+
+
+        </li>
+
+        <li> <a href="#"><i class="fas fa-clone"></i>Services</a>
+
+             <div class="sub-menu-1">
+                <ul>
+                    <li> <a href= "#">Web site </a></li>
+                     <li class="hover-me"> <a href= "#">Modules CSS</a>
+                      <i class="fas fa-chevron-right"></i>
+
+                            <div class="sub-menu-2">
+                                <ul>
+                                    
+                                <li><a href="#">media sociaux</a></li>
+                                <li><a href="#">site eco-commerce</a></li>
+                                <li><a href="#"></a> design</li>
+                                <li><a href="#">publicite</a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="#">work shop</a></li>
+
+
+                                </ul>
+                            </div>
+                        
+                     </li>
+
+                      <li class="hover-me"> <a href= "#">Javascript </a> <i class="fas fa-chevron-right"></i>
+
+                        <div class="sub-menu-2">
+                                
+                                <ul>
+                                    
+                                <li><a href="#">fonctionalites web site</a></li>
+                                <li><a href="#">database</a></li>
+                                <li><a href="#"></a> etc</li>
+                                
+
+                                </ul>
+
+
+
+
+                            </div>
+
+                      </li>
+                        <!-- <div class="sub-menu-2">
+                            <ul>
+                                <li><a href="#">placide</a></li>
+                                <li><a href="#">Rodrigue</a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="#">Raphael</a></li>
+                                <li><a href="#">jacques</a></li>
+                                <li><a href="#">Edna</a></li>
+
+                            </ul>
+                        </div> -->
+                      
+                </ul>
+            </div>
+
+        </li>
+
+        <li> <a href="#"><i class="fas fa-users"></i>Clients</a>
+             <div class="sub-menu-1">
+                <ul>
+                    <li> <a href= "https://www.facebook.com/salumu.muhemedi.73"><i class="fab fa-facebook" style="color: blue"></i>facebook</a></li>
+                     <li> <a href= "#"> <i class="fab fa-youtube" style="color: red"></i>Vision</a></li>
+                      <li> <a href= "#"> <i class="fab fa-instagram" style="color: red"></i>Team </a>
+                       
+                      </li>
+                </ul>
+            </div>
+
+        </li>
+
+        <li> <a href="#"><i class="fas fa-angel"></i>Investers</a>
+             <div class="sub-menu-1">
+                <ul>
+                    <li> <a href= "#">mession</a></li>
+                     <li> <a href= "#">Vision</a></li>
+                      <li> <a href= "#">Team </a>
+                      </li>
+                </ul>
+            </div>
+
+        </li>
+
+        <li> <a href="#"><i class="fas fa-times"></i>pricing</a>
+
+             <div class="sub-menu-1">
+                <ul>
+                    <li> <a href= "#">mession</a></li>
+                     <li> <a href= "#">Vision</a></li>
+                      <li> <a href= "#">Team </a>
+                       
+                      </li>
+                </ul>
+            </div>
+        </li>
+        <li> <a href="#"><i class="fas fa-edit"></i>trainings</a>
+             <div class="sub-menu-1">
+                <ul>
+                    <li> <a href= "#">mession</a></li>
+                     <li> <a href= "#">Vision</a></li>
+                      <li> <a href= "#">Team </a>
+                        
+                      </li>
+                </ul>
+            </div>
+        </li>
+
+        <li> <a href="#"><i class="fas fa-phone"></i>contact</a>
+             <div class="sub-menu-1">
+                <ul>
+                    <li> <a href= "#">mession</a></li>
+                     <li> <a href= "#">Vision</a></li>
+                      <li> <a href= "#">Team </a>
+                      
+                      </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+ <!-- pour les images en gallery -->
+        <div class="div-flooteur"> <a href="img/logo.jpg" data-lightbox="mode" data-title="caption1"> <img class="zoom" src="img/logo.jpg"></a></div>
+        <div class="containeur">
+            <div class="div-floteur2">
+                
+            </div>
+        </div>
+    <div class="container">
+      <div class="gallery">
+
+        <a href="img/logo.jpg" data-lightbox="mode" data-title="caption1"> <img class="zoom" src="img/logo.jpg"></a>
+         
+
+        <a href="img/2.jpg" data-lightbox="mode" data-title="caption2">
+           <img class="zoom" src="img/2.jpg">
+            </a> 
+       
+        <a href="etage/e2.jpg" data-lightbox="mode" data-title="caption3">
+          
+           <img class="zoom" src="etage/e2.jpg" width="32%">
+            </a>
+           
+        <a href="img/c2.jpg" data-lightbox="mode" data-title="caption4">
+            <img class="zoom" src="img/c2.jpg">
+             </a>
+
+        <a href="img/c1.jpg" data-lightbox="mode" data-title="caption5">
+            <img class="zoom" src="img/c1.jpg">
+             </a>
+
+        <a href="img/4.jpg" data-lightbox="mode" data-title="caption6">
+           <img class="zoom" src="img/4.jpg">
+             </a>
+        <a href="img/5.jpg" data-lightbox="mode" data-title="caption7">
+           <img class="zoom" src="img/5.jpg">
+             </a>
+             <video src="" controls poster="img/3.jpg"></video>
+            
+            <iframe width="561" height="316" src="https://www.youtube.com/embed/7p7iPNhg9SY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+
+
+    </div>
+
+<!--fini les images en galerry -->
+
+
+<script>
+    placide = setTimeout( 'reveil()', 900);
+    function reveil() {
+        let pld= "nous utilisons les cookies valide";
+        alert(pld);
+        pld.style.backgroundColor="red";
+        pld.style.fontSize="30px";
+        pld.style.margin="50px";
+    }
+</script>
+
+
+
+
+<!-- <></script> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function show(){
+//     document.getElementById("myUL").style.display="block";
+//     document.getElementById("myUL").value=""
+       
+// }
+// function myFunction() {
+//     document.getElementById("myUL").style.display="block"
+//     var input, filter, ul, li, i, a, txtValue;
+//     input = document.getElementById("myInput");
+//     filter = input.value.toUpperCase();
+//     ul = document.getElementById("myUL");
+//     li = ul.getElementsByTagName("li");
+//     for (i = 0; i < li.length; i++) {
+//         a = li[i].getElementsByTagName("a")[0];
+//         txtValue = a.textContent || a.innerText;
+//         if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//             li[i].style.display = "";
+//         } else {
+//             li[i].style.display = "none";
+//         }
+//     }
+
+// }
+// function none(){
+//     document.getElementById("myUL").style.display="none";
+// }
+// function search(){
+//         query = document.getElementById('myInput').value;
+
+//         if (query == "") {
+//             return;
+//         }
+//         found = -1; //intilize found to false
+
+//         for (var i = ul.length - 1; i >= 0; i++) {
+//            if(query==mot[i].li){
+//             found i;
+//             break;
+//            }
+//            else{
+//             document.getElementById("myUL").innerHTML="archi introuvable"
+//            }
+//            if (found>=0){
+//             show(found);
+//            }
+//         }
+//     search(); -->
+<script src="../dist/js/lightbox-plus-jquery.min.js"></script>
+<script src="lightbox-plus-jquery.j"></script>
+<!-- <script src="lightbox-plus-jquery.min.js"></script>
+<script src="/medium.js"></script>
+ <script src="js/all.min.js"></script> -->
+    <script src="js/all.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		.snip1589{
+			background-color:#000;
+			display: inline-block;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 24px;
+			margin: 8px;
+			max-width: 315px;
+			max-width: 230px;
+			overflow: hidden;
+			position: relative;
+			text-align: center;
+			width: 100%;
+		}
+		.snip1589 * {
+			-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all ease 0.35s;
+	transition: all ease 0.35s;
+	}
+	.snip1589:before,
+	.snip1589:after{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			-webkit-transition: all ease 0.35s;
+			transition: all ease 0.35s;
+			background-color: #000000;
+			border-left: 3px solid #fff;
+			border-right: 3px solid #fff;
+			content: "";
+			opacity: 0,9;
+			z-index: 1;
+	}
+	.snip1589:before{
+		-webkit-transform: skew(45deg) translateX(-155%);
+		transform: skew(45deg) translateX(-155%);
+	}
+	.snip1589:after{
+		-webkit-transform: skew(45deg) translateX(155%);
+		transform: skew(45deg) translateX(155%);
+	}
+	.snip1589 img{
+		backface-visibility: hidden;
+		max-width: 100%;
+		vertical-align: top;
+	}
+	.snip1589 figcaption{
+		top: 50%;
+		left: 50%;
+		position: absolute;
+		z-index: 2;
+		-webkit-transform: translate(-50%, -50%) scale(0.5);
+		transform: translate(-50%, -50%) scale(0.5);
+		opacity: 0;
+		-webkit-box-shadow: 0 0 10px #000000;
+		box-shadow: 0 0 10px #000000;
+	}
+	.snip1589 h3{
+		background-color: #000000;
+		border: 2px solid #fff;
+		color: #fff;
+		font-size: 1em;
+		font-weight: 600;
+		letter-spacing: 1px;
+		margin: 0;
+		padding: 5px 10px;
+		text-transform: uppercase;
+	}
+	.snip1589 a{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 3;
+	}
+	.snip1589:before > img,
+	.snip1589.hover > img{
+		opacity: 0.5;
+	}
+	.snip1589:hover:before,
+	.snip1589.hover:before{
+		-webkit-transform: skew(45deg) translateX(-55%);
+		transform: skew(45deg) translateX(-55%);
+	}
+	.snip1589:hover:after,
+	.snip1589.hover:after{
+		-webkit-transform: skew(45deg) translateX(55%);
+		transform: skew(45deg) translateX(55%);
+	}
+	.snip1589:hover figcaption,
+	.snip1589.hover figcaption{
+		-webkit-transform: translateX(-50%, -50%) scale(1);
+		transform:translateX(-50%, -50%) scale(1);
+	}
+	</style>
+</head>
+<body>
+	<figure class="snip1589">
+		<img src="GALERIE MAISON/PLAN/6.jpg" alt="sample70">
+		<figcaption>
+			<h3>Buy now</h3>
+		</figcaption>
+		<a href="#"></a>
+	</figure>
+	<figure class="snip1589 hover">
+		<img src="GALERIE MAISON/PLAN/7.jpg" alt="sample106">
+		<h3>Read more</span></h3>
+		<a href=""></a>
+	</figure>
+	<figure class="snip1589">
+		<img src="GALERIE MAISON/PLAN/8.jpg" alt="sample109">
+		<h3>Join us</span></h3>
+		<a href=""></a>
+	</figure>
+
+
+	<script type="text/javascript">
+		$(".hover").mouseleave(function() {
+			$(this).removeClass("hover");
+		}
+	);
+	</script>
+</body>
+</html>
